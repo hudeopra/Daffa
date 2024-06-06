@@ -18,58 +18,132 @@ jQuery(document).ready(function ($) {
 
   navbarFixed();
 
-  // Toggle meny form visibility
-  $(document).on("click", ".ph-header__open--trigger", function () {
-    $(".ph-header").toggleClass("header_fixed");
-    $(".ph-login").removeClass("ph-active");
-  });
+  // // Toggle meny form visibility
+  // $(document).on("click", ".ph-header__open--trigger", function () {
+  //   $(".ph-header").toggleClass("header_fixed");
+  //   $(".ph-login").removeClass("ph-active");
+  // });
 
-  // Toggle login form visibility
-  $(document).on("click", ".ph-user-trigger", function () {
-    $(".ph-login").toggleClass("ph-active");
-  });
+  // // Toggle login form visibility
+  // $(document).on("click", ".ph-user-trigger", function () {
+  //   $(".ph-login").toggleClass("ph-active");
+  // });
 
   // Initialize nice select
   $("select.nice-select").niceSelect();
 
-  // Initialize slick slider for banner
-  $(".ph-banner__slider").slick({
-    dots: false,
-    infinite: false,
-    speed: 500,
-    fade: true,
-    arrows: false,
-    autoplay: false,
-    focusOnSelect: false,
-    cssEase: "linear",
-  });
+  $(function () {
+    // For card rotation
+    $(".btn-rotate").click(function () {
+        var $cardContainer = $(this).closest(".rotate-container");
+        $cardContainer.find(".card-front").toggleClass("rotate-card-front");
+        $cardContainer.find(".card-back").toggleClass("rotate-card-back");
+    });
+});
 
-  // Initialize slick slider for product single page
-  $(".mt-other-products-slider").slick({
+
+  // Initialize slick slider 
+  $(".ph-skill__slider").slick({
     dots: false,
     infinite: true,
     speed: 7000,
     arrows: false,
-    slidesToShow: 5,
+    slidesToShow: 3,
     slidesToScroll: 3,
     autoplay: true,
     responsive: [
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 2,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
         },
       },
       {
         breakpoint: 431,
         settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 381,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ],
+  });
+  $(".ph-instrument--slider").slick({
+    dots: false,
+    infinite: true,
+    speed: 7000,
+    arrows: false,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
           slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 431,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 381,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ],
+  });
+  $(".ph-members__slider").slick({
+    dots: false,
+    infinite: true,
+    speed: 7000,
+    arrows: false,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 431,
+        settings: {
+          slidesToShow: 2,
         },
       },
       {
