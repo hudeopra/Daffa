@@ -4,14 +4,33 @@ body{
   font-size: 18px;
   color: #131313;
 }
-// h2{
-//   padding: 0 30px;
-//   border-bottom: 5px solid #ff0000 ;
-//   display: inline-block;
-// }
-/* Card styles for rotation */
+
 ul{
   padding-left: 15px;
+}
+main{
+  margin-top: 62px;
+}
+nav.bg-body-tertiary{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #cf2c2c !important;
+  transition: all .5s;
+  z-index: 10;
+  &:hover{
+    background-color: #ff0000 !important;
+  }
+  .nav-link{
+    color: #fff;
+    &.active{
+      font-weight: bold;
+    
+      &:after{
+        
+      }
+    }
+  }
 }
 .carousel-caption{
   top: 0;
@@ -27,12 +46,17 @@ ul{
     content:'';
     height: 100%;
     width: 100%;
-    background-color: rgba(255, 0, 0, 0.421);
+    background-color: rgba(0, 0, 0, 0.35);
     position: absolute;
     top: 0;
     left:0;
     z-index: -1;
   }
+}
+.carousel-control-next-icon,.carousel-control-prev-icon{
+  height: 3rem;
+  width: 3rem;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
 }
 .carousel-item{
   img{
@@ -378,4 +402,35 @@ footer{
   width: 12px;
 }.slick-dots li.slick-active button {
   background-color: #e1251b;
+}
+
+.ph-login-page{
+  .login-banner{
+    min-height:100vh;
+    object-fit: cover;
+    margin: 0 -12px ;
+  }
+  .ph-login-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;width: 100%;
+      max-width: 500px;
+      margin: auto;
+      &__wrapper{
+        display: flex;
+        gap: 60px;
+        flex-wrap: wrap;
+        margin-top: -10vh;
+      }
+      &__content{
+        p{
+          font-size: 15px;
+          font-weight: 600;
+        }
+      }
+      form{
+        width: 100%;
+      }
+  }
 }
