@@ -495,45 +495,38 @@ footer {
   background-color: #e1251b;
 }
 
-.ph-login-page .login-banner {
-  min-height: 100vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin: 0 -12px;
-}
-
-.ph-login-page .ph-login-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.pop-up {
+  position: fixed;
+  left: 0%;
+  top: 0%;
   height: 100%;
   width: 100%;
-  max-width: 500px;
-  margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
-.ph-login-page .ph-login-form__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 60px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-top: -10vh;
+.pop-up.active {
+  opacity: 1;
+  visibility: visible;
 }
 
-.ph-login-page .ph-login-form__content p {
-  font-size: 15px;
-  font-weight: 600;
+.ph-login-form__wrapper {
+  background: red;
+  padding: 60px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
-.ph-login-page .ph-login-form form {
-  width: 100%;
+.pop-up__close {
+  position: absolute;
+  right: 30px;
+  top: 30px;
 }
 /*# sourceMappingURL=style.css.map */
