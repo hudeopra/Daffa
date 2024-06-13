@@ -48,8 +48,8 @@ jQuery(document).ready(function ($) {
     infinite: true,
     speed: 7000,
     arrows: false,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 2,
+    slidesToScroll: 2,
     autoplay: true,
     responsive: [
       {
@@ -82,7 +82,7 @@ jQuery(document).ready(function ($) {
     ],
   });
   $(".ph-instrument--slider").slick({
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 7000,
     arrows: false,
@@ -124,7 +124,7 @@ jQuery(document).ready(function ($) {
     infinite: true,
     speed: 7000,
     arrows: false,
-    slidesToShow: 3,
+    slidesToShow: 7,
     slidesToScroll: 3,
     autoplay: true,
     responsive: [
