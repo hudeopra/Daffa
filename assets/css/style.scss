@@ -11,6 +11,11 @@ ul{
 main{
   margin-top: 62px;
 }
+.form-label{
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+}
 nav.bg-body-tertiary{
   position: fixed;
   top: 0;
@@ -457,11 +462,37 @@ footer{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%)
-
+  transform: translate(-50%, -50%);
+  width: 550px;
 }
 .pop-up__close{
   position: absolute;
   right: 30px;
   top: 30px;
+}
+.ph-video{
+  overflow-x: hidden;
+  &__item{
+    img{
+      object-fit: contain;
+      height: 100px;
+    }
+  }
+}
+video{
+  width: 100%;
+  height: auto;
+}
+.slider-for{
+  .ph-video__item img{
+    height: unset;
+  }
+}
+.ph-video-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap:30px;
+  background:#f6f6f6;
+  padding: 30px;
 }

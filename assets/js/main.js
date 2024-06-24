@@ -23,6 +23,10 @@ jQuery(document).ready(function ($) {
     });
 });
 
+  // fancybox initialized
+  Fancybox.bind("[data-fancybox]", {
+    // Your custom options
+  });
 
   // Initialize slick slider 
   $(".ph-skill__slider").slick({
@@ -139,67 +143,110 @@ jQuery(document).ready(function ($) {
       // instead of a settings object
     ],
   });
-  $(".slider-for").slick({
+  $(".ph-video__slider").slick({
+    dots: true,
+    infinite: true,
+    speed: 7000,
+    arrows: false,
+    slidesToShow: 4,
+    slidesToScroll: 3,
+    autoplay: true,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 431,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 381,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ],
+  });
+ 
+  $('.slider-for').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false,
     fade: true,
-    asNavFor: ".slider-nav",
+    asNavFor: '.slider-nav'
   });
-  $(".slider-nav").slick({
+  $('.slider-nav').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: false,
-    asNavFor: ".slider-for",
-    focusOnSelect: true,
+    asNavFor: '.slider-for',
+    dots: true,
+    arrows:false,
+    centerMode: true,
+    focusOnSelect: true
   });
-  // Function to handle form submission
-  function handleSubmit(event) {
-    event.preventDefault(); // Prevent default form submission
-    var form = event.target;
-    var formData = new FormData(form);
+    
+//   // Function to handle form submission
+//   function handleSubmit(event) {
+//     event.preventDefault(); // Prevent default form submission
+//     var form = event.target;
+//     var formData = new FormData(form);
 
-    // Perform AJAX request
-    fetch(form.action, {
-      method: form.method,
-      body: formData,
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to submit form");
-        }
-        // Assuming response is OK, handle success here
-        console.log("Form submitted successfully");
-      })
-      .catch((error) => {
-        console.error("Error submitting form:", error.message);
-        // You can add additional error handling here
-      });
-  }
+//     // Perform AJAX request
+//     fetch(form.action, {
+//       method: form.method,
+//       body: formData,
+//     })
+//       .then((response) => {
+//         if (!response.ok) {
+//           throw new Error("Failed to submit form");
+//         }
+//         // Assuming response is OK, handle success here
+//         console.log("Form submitted successfully");
+//       })
+//       .catch((error) => {
+//         console.error("Error submitting form:", error.message);
+//         // You can add additional error handling here
+//       });
+//   }
 
-  // Attach event listener for login form
-  var loginForm = document.getElementById("loginForm");
-  if (loginForm) {
-    loginForm.addEventListener("submit", handleSubmit);
-  }
+//   // Attach event listener for login form
+//   var loginForm = document.getElementById("loginForm");
+//   if (loginForm) {
+//     loginForm.addEventListener("submit", handleSubmit);
+//   }
 
-  // Attach event listener for newsletter form
-  var newsletterForm = document.getElementById("newsletterForm");
-  if (newsletterForm) {
-    newsletterForm.addEventListener("submit", handleSubmit);
-  }
+//   // Attach event listener for newsletter form
+//   var newsletterForm = document.getElementById("newsletterForm");
+//   if (newsletterForm) {
+//     newsletterForm.addEventListener("submit", handleSubmit);
+//   }
 
-  // Attach event listeners to specific forms
-  var contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", handleSubmit);
-  }
+//   // Attach event listeners to specific forms
+//   var contactForm = document.getElementById("contactForm");
+//   if (contactForm) {
+//     contactForm.addEventListener("submit", handleSubmit);
+//   }
 
-  var bookingForm = document.getElementById("bookingForm");
-  if (bookingForm) {
-    bookingForm.addEventListener("submit", handleSubmit);
-  }
+//   var bookingForm = document.getElementById("bookingForm");
+//   if (bookingForm) {
+//     bookingForm.addEventListener("submit", handleSubmit);
+//   }
 
-  // Attach event listener for all other forms
-  $("form").not("#contactForm, #bookingForm").on("submit", handleSubmit);
+//   // Attach event listener for all other forms
+//   $("form").not("#contactForm, #bookingForm").on("submit", handleSubmit);
 });

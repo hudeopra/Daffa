@@ -28,9 +28,13 @@
         <!-- bootstrap -->
         <link rel='stylesheet' href="assets/library/bootstrap/bootstrap.css"
             type='text/css' media='all' />
+        <!-- Fancybox -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+            />
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
+    
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
@@ -43,7 +47,7 @@
                   <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#">About Us</a>
@@ -60,22 +64,238 @@
                     </ul>
                   </div>
                   <div class="login">
-                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <a href="javascript:void(0)" id="loginBtn" class="btn btn-primary">Login</a>
+                    
+                    <div class="ph-login-form pop-up">
+                        <div class="ph-login-form__wrapper">
+                            
+                    <a href="javascript:void(0)" class="pop-up__close"><i class="fa fa-times" aria-hidden="true"></i>
+                    </a>
+                            <div class="ph-login-form__content text-center">
+                                <h2>Login Account</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque soluta deserunt, ad quae, sit excepturi necessitatibus impedit provident, libero saepe dolor dignissimos? Aliquam, ex facilis?</p>
+                            </div>
+                            <form>
+                                <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Example@email.com">
+                                </div>
+                                <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="********">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
                   </div>
                 </div>
               </nav>
         </header>
         <main class="ph-tutorial-page">
-            <div class="container-fluid">
-                <div class="row"><video width="400" controls>
-                    <source src="assets/img/media.mp4" type="video/mp4">
-                  </video>
-
-                    <audio controls>
-                        <source src="assets/img/audio.mp3" type="audio/mpeg">
-                      Your browser does not support the audio element.
-                      </audio>
+            <div class="container-fluid py-5">
+                <div class="row py-5">
+                    <div class="col-12 ">
+                        <div>
+                            
+                            <h1>Option 1</h1>
+                            <ul>
+                                <li>
+                                    Video Slider and on click popup
+                                </li>
+                                <li>thumbnail displayed on slider and on click video will play via popup</li>
+                            </ul>
+                        </div>
+                        <div class="ph-video">
+                            <h2> slider</h2>
+                            <div class="ph-video__slider">
+                                <div class="ph-video__item">                   
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/banner.jpg" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/userImage.png" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/skill1.jpg" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">                   
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/banner.jpg" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/userImage.png" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/skill1.jpg" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">                   
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/banner.jpg" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/userImage.png" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/skill1.jpg" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                            </div>
+                            <h2>grid</h2>
+                            <div class="ph-video-grid">
+                                
+                                <div class="ph-video__item">                   
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/banner.jpg" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/userImage.png" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/skill1.jpg" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">                   
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/banner.jpg" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/userImage.png" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/skill1.jpg" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">                   
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/banner.jpg" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/userImage.png" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                                <div class="ph-video__item">
+                                    <a href="assets/img/media.mp4" data-fancybox="gallery" data-caption="Caption #1">
+                                        <img src="assets/img/skill1.jpg" alt="Thumbnail image" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div>
+                            
+                            <h1>Option 2</h1>
+                            <ul>
+                                <li>
+                                    2 sliders in sync
+                                </li>
+                                <li>
+                                    slider-for slider is the main part
+                                </li>
+                                <li>
+                                    slider-nav is for navagating the video i.e.thumbnail
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="slider-for">
+                            <div class="ph-video__item">
+                                <video controls>
+                                    <source src="assets/img/media.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <div class="ph-video__item">
+                                <video controls>
+                                    <source src="assets/img/media2.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <div class="ph-video__item">
+                                <video controls>
+                                    <source src="assets/img/media3.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <div class="ph-video__item">
+                                <video controls>
+                                    <source src="assets/img/media2.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <div class="ph-video__item">
+                                <video controls>
+                                    <source src="assets/img/media.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <div class="ph-video__item">
+                                <video controls>
+                                    <source src="assets/img/media2.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                        </div>
+                        
+                        <div class="slider-nav">
+                            <div class="ph-video__item">
+                                <video >
+                                    <source src="assets/img/media.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <div class="ph-video__item">
+                                <video >
+                                    <source src="assets/img/media2.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <div class="ph-video__item">
+                                <video >
+                                    <source src="assets/img/media3.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <div class="ph-video__item">
+                                <video >
+                                    <source src="assets/img/media2.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <div class="ph-video__item">
+                                <video >
+                                    <source src="assets/img/media.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <div class="ph-video__item">
+                                <video >
+                                    <source src="assets/img/media2.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="py-5">
+                
+                <audio controls>
+                    <source src="assets/img/audio.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                  </audio>
             </div>
         </main>
         <footer class="ph-footer ">
@@ -131,6 +351,9 @@
         <script src="assets/library/wow-js/wow.min.js"></script>
         <!-- nice select -->
         <script src="assets/library/nice-select/jquery.nice-select.js"></script>
+        <!-- fancybox -->
+        
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
         <!-- main js -->
         <script src="assets/js/main.js"></script>
     </body>
