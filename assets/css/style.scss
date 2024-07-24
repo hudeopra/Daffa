@@ -1,14 +1,24 @@
+$color-primary: #e20000;
+$color-primary-light: #FFAAAA;
+$color-gray: #e8e8e8;
+$color-text: #3C3333;
+
 body{
   font-family: "Raleway", sans-serif;
   line-height: 1.7;
-  font-size: 18px;
-  color: #131313;
+  font-size: 16px;
+  color: $color-text;
+  background: $color-gray;
 }
 
 ul{
-  padding-left: 15px;
+  padding-left: 0;
+  li{
+    margin: 0;
+  }
 }
 main{
+  margin-top: -63px;
 }
 .form-label{
   font-size: 14px;
@@ -17,7 +27,7 @@ main{
 }
 
 .header_fixed.ph-header {
-  background-color: #f00000;
+  background-color: $color-primary;
   z-index: 98;
   position: fixed;
   width: 100%;
@@ -38,31 +48,45 @@ main{
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   z-index: 99;
+
+}
+.ph-banner{
+  position: relative;
 }
 nav.bg-body-tertiary{
 background-color: transparent !important;
-position: relative;
-  width: 100%;
+width: 100%;
   transition: all .5s;
   z-index: 10;
-  &:hover{
-  }
   .nav-link{
-    color: #fff;
-    &.active{
-      font-weight: bold;
-    
-      &:after{
-        
-      }
+    color: $color-gray;
+    position: relative;  margin:0 10px;
+    &:after{
+      content:"";  
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background-color: $color-gray;
+      transition: all .5s;
     }
+    &.active,&:hover{
+      position: relative;
+      &:after{
+        width: 100%;
+      }
   }
+}}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
+  color: $color-gray;
 }
 .carousel-caption{
   top: 0;
   left: 0;
   right: auto;
   position: absolute;
+  z-index: 1;
   height: 100%;
   width: 100%;
   display: flex !important;
@@ -184,9 +208,6 @@ a{
   color: unset;
   transition-delay: .2;
   transition: all .5s ease;
-  &:hover{
-    letter-spacing:1px
-  }
 }
 
 
@@ -318,25 +339,58 @@ a{
   }
 }
 .ph-instrument{
-  &__slider{
+  &__grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr ;
+    gap: 30px;
     &--item{
-      padding: 15px;
-      box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
+      padding: 30px 20px;
+      box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
       transition: all .5s;
-      img{
-        max-height: 200px;
-        object-fit: contain;
+      h3{
+        font-size: 24px;
+        margin-bottom: 20px;
       }
       &:hover{
           background-color: #c40000;
           color: #fff;
       }
     }
+    *:hover{
+      .ph-instrument__grid--img{
+        animation: shake-top 0.5s; /* Apply the shake animation on hover */
+
+      }
+    }
+    &--img{
+      height: 200px;
+      object-fit: contain;      transition: transform 0.5s; /* Smooth transition for the shake */
+
+    }
     &--content{
       margin-bottom: 30px;
 
 
     }
+  }
+}
+@keyframes shake-top {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 .ph-members{
@@ -354,7 +408,7 @@ a{
       }
     }
     img{
-      min-height: 300px;
+      min-height: 150px;
       object-fit: cover;
     }
     h3{
@@ -364,10 +418,9 @@ a{
       width: 100%;
       color: #fff;
       margin-bottom: 0;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 700;
-      padding: 10px 5px;
-      height: 60px;
+      padding: 8px 5px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -460,12 +513,15 @@ footer{
 //       }
 //   }
 // }
+#loginBtn{
+  margin-right: 10px;
+}
 .pop-up{
   position: fixed;
   left: 0%;
   top: 0%;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   background-color: rgba(0, 0, 0, 0.5);
   visibility:hidden;
   opacity:0;
@@ -555,4 +611,66 @@ video{
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap:30px;
+}
+
+.loggedin{
+  a{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+  img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  span{
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: 1px solid #cacaca;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+  }
+  .user-img:hover  .user-nav__option {
+    transition: opacity 0.5s ease-out 1s, visibility 0.5s ease-out 1s; /* Delay of 2s and transition duration of 1s */
+    visibility: visible;
+    opacity: 1;
+    top: 3px
+
+
+  }
+}
+
+.user-nav {
+  position: relative;
+  &__option {padding: 10px;
+    background-color: #f6f6f6;
+    padding: 5px;
+    border-radius: 8px;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    width: 120px;
+    li{
+      margin-left: 15px;
+    }
+  
+  }
+}
+
+.innerpage{
+  .ph-banner{
+    img{
+      
+    height: 300px;
+    object-fit: cover;
+    }
+  }
 }
